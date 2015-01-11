@@ -15,12 +15,16 @@ HTMLWidgets.widget({
   },
 
   renderValue: function(el, x, instance) {
-    console.log(el);
-    console.log('x =' +JSON.stringify(x));
+ //   console.log(el);
+ //   console.log('x =' +JSON.stringify(x));
 
    var pie = new d3pie(el.id, x );
-    pie.redraw();
-
+//    pie.redraw();
+  $(function() {
+  	$("#refreshBtn").on("click", function(e) {
+			pie.redraw();
+		});
+	});
 },
 
 
