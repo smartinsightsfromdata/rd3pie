@@ -6,18 +6,20 @@ beerPie$setLib("http://timelyportfolio.github.io/rChartsExtra/d3pie")
 # source : The Atlantic April 2014 "The State of American Beer"
 # http://www.theatlantic.com/business/archive/2014/04/the-state-of-american-beer/360583/
 
-rd3pie_ <- function(pieData, pieTitle, pieSubTitle, pieStyle){
-l_ <- list(
-  header = list(
-    title = list(
-      text = pieTitle),
-    subtitle = list(
-      text = pieSubTitle)
-    ),
-  data = list(
-    content = as.matrix(pieData)),
-  labels = list(
-    lines = list(style = pieStyle)))
+rd3pie(beerData)
+  #) <- function(pieData){ #, pieTitle, pieSubTitle, pieStyle){
+l_ <- list(data = list( content = pieData))
+#
+#   header = list(
+#     title = list(
+#       text = pieTitle),
+#     subtitle = list(
+#       text = pieSubTitle)
+#     ),
+#   data = list(
+#     content = pieData),
+#   labels = list(
+#     lines = list(style = pieStyle)))
 
 return(l_)
 }
@@ -45,10 +47,10 @@ pieStyle <- "straight"
 beerData[nrow(beerData),2] <- sum(beerData[-nrow(beerData),2])
 
 
-rd3pie_(beerData, pieTitle, pieSubtitle, pieStyle)
+# rd3pie_(beerData, pieTitle, pieSubtitle, pieStyle)
 
 
-beerPie$params$chartspec <- rd3pie_(beerData, pieTitle, pieSubtitle, pieStyle)
+beerPie$params$chartspec <- rd3pie_(beerData) #, pieTitle, pieSubtitle, pieStyle)
 # beerPie$params$chartspec <- list(
 #   header = list(
 #     title = list(

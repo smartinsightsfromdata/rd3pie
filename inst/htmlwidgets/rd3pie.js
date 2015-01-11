@@ -16,20 +16,16 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
     console.log(el);
+    console.log('x =' +JSON.stringify(x));
 
-    console.log('header =' +JSON.stringify(x.header));
-    console.log('data =' +JSON.stringify(x.data));
-
-   var pie = new d3pie(el.id, 
-             x
-  );
+   var pie = new d3pie(el.id, x );
     pie.redraw();
-    
+
 },
 
 
 
-  
+
 
   resize: function(el, width, height, instance) {
 

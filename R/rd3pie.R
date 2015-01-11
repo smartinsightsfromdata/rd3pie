@@ -8,16 +8,21 @@
 rd3pie <- function(Data, Title = NULL,
     SubTitle = NULL, width = NULL, height = NULL ){
 
-lData <- list(
-  header = list(
-    title = list(
-      text = Title),
-    subtitle = list(
-      text = SubTitle)
-    ),
-  data = list(
-    content = apply(Data,1,as.list))
-  )
+d3data <- lapply(1:nrow(Data), function(i) {
+    res <- as.list(Data[i, ])
+    return(res)})
+
+lData <- list(data = list( content = d3data))
+#   list(
+#   header = list(
+#     title = list(
+#       text = Title),
+#     subtitle = list(
+#       text = SubTitle)
+#     ),
+#   data = list(
+#     content = Data)
+#   )
 
   # create widget
   htmlwidgets::createWidget(
