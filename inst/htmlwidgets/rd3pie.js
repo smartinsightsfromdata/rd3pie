@@ -19,7 +19,7 @@ HTMLWidgets.widget({
  //   console.log('x =' +JSON.stringify(x));
 
    var pie = new d3pie(el.id, x );
-//    pie.redraw();
+
   $(function() {
   	$("#refreshBtn").on("click", function(e) {
 			pie.redraw();

@@ -4,7 +4,7 @@
 \alias{rd3pieOutput}
 \title{Widget output function for use in Shiny}
 \usage{
-rd3pieOutput(outputId, width = "100\%", height = "400px")
+rd3pieOutput(outputId, width = "100\%", height = "100\%")
 }
 \description{
 Widget output function for use in Shiny

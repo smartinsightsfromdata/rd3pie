@@ -9,20 +9,22 @@ rd3pie <- function(Data, Title = NULL,
     SubTitle = NULL, width = NULL, height = NULL ){
 
 d3data <- lapply(1:nrow(Data), function(i) {
-    res <- as.list(Data[i, ])
-    return(res)})
+    l_ <- as.list(Data[i, ])
+    return(l_)})
 
-lData <- list(data = list( content = d3data))
-#   list(
-#   header = list(
-#     title = list(
-#       text = Title),
-#     subtitle = list(
-#       text = SubTitle)
-#     ),
-#   data = list(
-#     content = Data)
-#   )
+lData <- list(
+  header = list(
+    title = list(
+      text = Title),
+    subtitle = list(
+      text = SubTitle)
+  ),
+  data = list(
+    content = d3data)
+)
+
+#lData <- list(data = list( content = d3data))
+
 
   # create widget
   htmlwidgets::createWidget(
@@ -38,7 +40,7 @@ lData <- list(data = list( content = d3data))
 #' Widget output function for use in Shiny
 #'
 #' @export
-rd3pieOutput <- function(outputId, width = '100%', height = '400px'){
+rd3pieOutput <- function(outputId, width = '100%', height = '100%'){
   shinyWidgetOutput(outputId, 'rd3pie', width, height, package = 'rd3pie')
 }
 

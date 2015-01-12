@@ -26,12 +26,13 @@ pieStyle <- "straight"
 beerData[nrow(beerData),2] <- sum(beerData[-nrow(beerData),2])
 
 ui = shinyUI(fluidPage(
+  fluidRow(column(2,
   rd3pie::rd3pieOutput('pie')
-))
+))))
 
 server = function(input, output, session) {
   output$pie <- renderRd3pie(
-    rd3pie(beerData)
+    rd3pie(beerData,"beers")
   )
 }
 
