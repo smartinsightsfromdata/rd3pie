@@ -1,8 +1,10 @@
 Package: rd3pie
-Title: What the package does (one line)
+Title: Access to beautiful pies with d3pie library
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
+Authors: "Enzo Martoglio  [aut, cre]"
+Maintainer: Enzo  <enzo@smartinsightsfromdata.com>
+Description: Access to beautiful pies with d3pie library - see http://d3pie.org/
 Depends: R (>= 3.1.2)
-License: What license is it under?
+License: file LICENSE
 LazyData: true
+URL: https://github.com/smartinsightsfromdata/

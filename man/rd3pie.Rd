@@ -4,7 +4,8 @@
 \alias{rd3pie}
 \title{<Add Title>}
 \usage{
-rd3pie(Data, Title = NULL, SubTitle = NULL, width = NULL, height = NULL)
+rd3pie(Data, Title = NULL, SubTitle = NULL, OuterRadius = NULL,
+  width = NULL, height = NULL)
 }
 \description{
 <Add Description>

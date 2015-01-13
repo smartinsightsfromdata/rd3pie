@@ -6,7 +6,6 @@ HTMLWidgets.widget({
 
   initialize: function(el, width, height) {
 
-
     return {
   //   pie: pie
       // TODO: add instance fields as required
@@ -18,13 +17,29 @@ HTMLWidgets.widget({
  //   console.log(el);
  //   console.log('x =' +JSON.stringify(x));
 
-   var pie = new d3pie(el.id, x );
+var pie = null;
+function create() {
+  if (el.hasChildNodes()) {
+//  alert(el.hasChildNodes());
+    while (el.firstChild) {
+      el.removeChild(el.firstChild);
+    }
+  }
+//  alert(isEmpty(el.textContent));
+  pie = new d3pie(el.id, x );
+}
 
-  $(function() {
-  	$("#refreshBtn").on("click", function(e) {
-			pie.redraw();
-		});
-	});
+
+$(function() {
+  if (pie !== null) {
+    pie.destroy();
+    pie = null;
+  }
+
+  create();
+
+
+});
 },
 
 

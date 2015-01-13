@@ -26,14 +26,24 @@ pieStyle <- "straight"
 beerData[nrow(beerData),2] <- sum(beerData[-nrow(beerData),2])
 
 ui = shinyUI(fluidPage(
-  fluidRow(column(2,
-  rd3pie::rd3pieOutput('pie')
-))))
+  fluidRow(  column(3,sliderInput("integer", "Multiplier:",
+                                  min=1, max=5, value=1)),
+    column(6,
+  rd3pie::rd3pieOutput('pie'))
+
+)))
 
 server = function(input, output, session) {
-  output$pie <- renderRd3pie(
-    rd3pie(beerData,"beers")
-  )
+
+##
+  output$pie <- renderRd3pie({
+    if(!is.null(input$integer)) {
+      mult <- input$integer
+      val <- beerData[beerData$label=="Bud Light",2]
+      beerData[beerData$label=="Bud Light",2] <- mult*val
+    }
+    rd3pie(beerData,"beers", NULL,"50%")
+ } )
 }
 
 
