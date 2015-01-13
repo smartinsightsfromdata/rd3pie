@@ -8,6 +8,11 @@
 rd3pie <- function(Data, Title = NULL,
     SubTitle = NULL, width = NULL, height = NULL ){
 
+if(class(Data[[colnames(Data)[1]]]) == "character") { colnames(Data)[1] <- "label"
+} else { colnames(Data)[1] <- "value"  }
+if(class(Data[[colnames(Data)[2]]]) == "character") { colnames(Data)[2] <- "label"
+} else { colnames(Data)[2] <- "value"  }
+
 d3data <- lapply(1:nrow(Data), function(i) {
     l_ <- as.list(Data[i, ])
     return(l_)})
