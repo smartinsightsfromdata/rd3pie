@@ -1,10 +1,18 @@
 Package: rd3pie
-Title: Access to beautiful pies with d3pie library
-Version: 0.1
-Authors: "Enzo Martoglio  [aut, cre]"
-Maintainer: Enzo  <enzo@smartinsightsfromdata.com>
-Description: Access to beautiful pies with d3pie library - see http://d3pie.org/
+Title: Interface to d3pie Library, built on d3.js, for creating clera, attractive pie charts
+Version: 0.1.1
+Authors@R: c(
+    person("Benjamin", "Keen", role = c("aut", "cph"),
+       comment = "d3library in htmlwidgets/lib, http://d3pie.org/"),
+    person("Enzo", "Martoglio", role = c("aut", "cre"),
+       comment = "R interface", email = "enzo@smartinsightsfromdata.com")
+    )
+Maintainer: Enzo Martoglio  <enzo@smartinsightsfromdata.com>
+Description: An ccess to beautiful pies with d3pie library - see http://d3pie.org/
 Depends: R (>= 3.1.2)
-License: file LICENSE
+Imports: htmlwidgets (>= 0.3.2)
+Enhances: shiny (>= 0.10.2.1)
+License: MIT + file LICENSE
+Materials: README
 LazyData: true
 URL: https://github.com/smartinsightsfromdata/
