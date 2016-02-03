@@ -14,8 +14,8 @@ HTMLWidgets.widget({
   },
 
   renderValue: function(el, x, instance) {
- //   console.log(el);
- //   console.log('x =' +JSON.stringify(x));
+//   console.log(el);
+//   console.log('x =' +JSON.stringify(x));
 
 var pie = null;
 function create() {

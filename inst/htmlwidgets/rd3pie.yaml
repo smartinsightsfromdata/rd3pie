@@ -8,6 +8,6 @@ dependencies:
   src: htmlwidgets/lib/d3
   script: d3.js
 - name: d3pie
-  version: 0.1.4
+  version: 0.1.8
   src: htmlwidgets/lib/d3pie
   script: d3pie/d3pie.js

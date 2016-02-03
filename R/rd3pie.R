@@ -6,7 +6,7 @@
 #'
 #' @export
 rd3pie <- function(Data, Title = NULL,
-    SubTitle = NULL, OuterRadius = NULL, width = NULL, height = NULL ){
+    SubTitle = NULL, OuterRadius = NULL, width = NULL, height = NULL, enabled_tooltips = NULL, type = NULL ){
 
 if(class(Data[[colnames(Data)[1]]]) == "character") { colnames(Data)[1] <- "label"
 } else { colnames(Data)[1] <- "value"  }
@@ -27,7 +27,11 @@ lData <- list(
   size = list(
     pieOuterRadius = OuterRadius),
   data = list(
-    content = d3data)
+    content = d3data),
+  tooltips = list(
+     enabled = enabled_tooltips,
+    type = type
+  )
 )
 
 #lData <- list(data = list( content = d3data))

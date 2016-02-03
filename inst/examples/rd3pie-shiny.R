@@ -24,7 +24,7 @@ pieTitle <- "Domestic Beer in the U.S. 2013 | Dollar Sales"
 pieSubtitle <- "source: The Atlantic, April 2014"
 pieStyle <- "straight"
 beerData[nrow(beerData),2] <- sum(beerData[-nrow(beerData),2])
-
+beerData$caption <- paste0(beerData$label, "_")
 ui = shinyUI(fluidPage(
   fluidRow(  column(3,sliderInput("integer", "Multiplier:",
                                   min=1, max=5, value=1)),
@@ -42,7 +42,7 @@ server = function(input, output, session) {
       val <- beerData[beerData$label=="Bud Light",2]
       beerData[beerData$label=="Bud Light",2] <- mult*val
     }
-    rd3pie(beerData,"beers", NULL,"50%")
+    rd3pie(beerData,"beers",  enabled_tooltips= TRUE, type = "caption")
  } )
 }
 
